@@ -45,6 +45,11 @@ W1 = simple_key_sequence([KC.LCMD(KC.HOME)])
 W2 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N2))])
 W3 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N3))])
 W4 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N4))])
+# Change current window position
+MOVE_RIGHT = simple_key_sequence([KC.LCMD(KC.RIGHT), KC.MACRO_SLEEP_MS(50), KC.ESC])
+MOVE_LEFT = simple_key_sequence([KC.LCMD(KC.LEFT), KC.MACRO_SLEEP_MS(50), KC.ESC])
+MOVE_SCREEN_RIGHT = simple_key_sequence([KC.LCMD(KC.LSFT(KC.RIGHT)), KC.MACRO_SLEEP_MS(50), KC.ESC])
+MOVE_SCREEN_LEFT = simple_key_sequence([KC.LCMD(KC.LSFT(KC.LEFT)), KC.MACRO_SLEEP_MS(50), KC.ESC])
 # Youtube control
 # Ctrl+Shift+F1 executes youtube window focus script:
 # https://github.com/f5AFfMhv/Random-Scripts/blob/master/HotKey-Deck/youtube_focus.sh
@@ -69,6 +74,9 @@ TD_Y_PLAY = KC.TD(PLAY_PAUSE, PREPARE_WINDOW)
 TD_W_P = KC.TD(WP, WUP)
 TD_P_P = KC.TD(PP, PUP)
 
+TD_W_RIGHT = KC.TD(MOVE_RIGHT, MOVE_SCREEN_RIGHT)
+TD_W_LEFT = KC.TD(MOVE_LEFT, MOVE_SCREEN_LEFT)
+
 # KEYMAPS
 keyboard.keymap = [
     [
@@ -81,7 +89,7 @@ keyboard.keymap = [
 encoders.map = [
     (
         (FF10,          RW10,           MINI_PLAYER),
-        (KC.RGB_VAI,    KC.RGB_VAD,     KC.RGB_TOG)
+        (TD_W_RIGHT,    TD_W_LEFT,      KC.RGB_TOG)
     )
 ]
 
