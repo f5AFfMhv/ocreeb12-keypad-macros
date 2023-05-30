@@ -39,6 +39,7 @@ PUP = simple_key_sequence([send_string(variables.pu), KC.MACRO_SLEEP_MS(50), KC.
 PP = simple_key_sequence([send_string(variables.pp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 WRS = simple_key_sequence([send_string(variables.wrs), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string(variables.wp), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string('sudo -i'), KC.ENTER])
 WUP = simple_key_sequence([send_string(variables.wu), KC.MACRO_SLEEP_MS(50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.wp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
+WAUP = simple_key_sequence([send_string(variables.wau), KC.MACRO_SLEEP_MS(50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.wp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 WP = simple_key_sequence([send_string(variables.wp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 # Workspaces switch
 W1 = simple_key_sequence([KC.LCMD(KC.HOME)])
@@ -71,7 +72,8 @@ TD_Y_VID = KC.TD(NEXT, PREVIOUS)
 TD_Y_SCREEN = KC.TD(FULLSCREEN, THEATRE, MINI_PLAYER)
 TD_Y_PLAY = KC.TD(PLAY_PAUSE, PREPARE_WINDOW)
 
-TD_W_P = KC.TD(WP, WUP)
+TD_W_P = KC.TD(WUP, WAUP)
+TD_W_C = KC.TD(WP, WRS)
 TD_P_P = KC.TD(PP, PUP)
 
 TD_W_RIGHT = KC.TD(MOVE_RIGHT, MOVE_SCREEN_RIGHT)
@@ -82,7 +84,7 @@ keyboard.keymap = [
     [
         W1,             W2,             W3,             W4,
         TD_Y_PLAY,      TD_Y_SCREEN,    TD_Y_SPEED,     TD_Y_VID,
-        TD_P_P,         LANGSW,         WRS,            TD_W_P,
+        TD_P_P,         LANGSW,         TD_W_C,            TD_W_P,
     ]
 ]
 
