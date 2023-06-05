@@ -46,6 +46,10 @@ W1 = simple_key_sequence([KC.LCMD(KC.HOME)])
 W2 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N2))])
 W3 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N3))])
 W4 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N4))])
+W5 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N5))])
+W6 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N6))])
+W7 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N7))])
+W8 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N8))])
 # Change current window position
 MOVE_RIGHT = simple_key_sequence([KC.LCMD(KC.RIGHT), KC.MACRO_SLEEP_MS(50), KC.ESC])
 MOVE_LEFT = simple_key_sequence([KC.LCMD(KC.LEFT), KC.MACRO_SLEEP_MS(50), KC.ESC])
@@ -79,12 +83,17 @@ TD_P_P = KC.TD(PP, PUP)
 TD_W_RIGHT = KC.TD(MOVE_RIGHT, MOVE_SCREEN_RIGHT)
 TD_W_LEFT = KC.TD(MOVE_LEFT, MOVE_SCREEN_LEFT)
 
+TD_W15 = KC.TD(W1, W5)
+TD_W26 = KC.TD(W2, W6)
+TD_W37 = KC.TD(W3, W7)
+TD_W48 = KC.TD(W4, W8)
+
 # KEYMAPS
 keyboard.keymap = [
     [
-        W1,             W2,             W3,             W4,
+        TD_W15,         TD_W26,         TD_W37,         TD_W48,
         TD_Y_PLAY,      TD_Y_SCREEN,    TD_Y_SPEED,     TD_Y_VID,
-        TD_P_P,         LANGSW,         TD_W_C,            TD_W_P,
+        TD_P_P,         LANGSW,         TD_W_C,         TD_W_P,
     ]
 ]
 
