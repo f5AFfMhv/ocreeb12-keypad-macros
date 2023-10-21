@@ -38,10 +38,10 @@ FULLSCREEN_WINDOW = simple_key_sequence([KC.LWIN(KC.UP)])
 # Personal
 PUP = simple_key_sequence([send_string(variables.pu), KC.MACRO_SLEEP_MS(50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.pp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 PP = simple_key_sequence([send_string(variables.pp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
-WRS = simple_key_sequence([send_string(variables.wrs), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string(variables.wp), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string('sudo -i'), KC.ENTER])
+WRS = simple_key_sequence([send_string(variables.wrs), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string(variables.lp), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string('sudo -i'), KC.ENTER])
 WUP = simple_key_sequence([send_string(variables.wu), KC.MACRO_SLEEP_MS(50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.wp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 WAUP = simple_key_sequence([send_string(variables.wau), KC.MACRO_SLEEP_MS(50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.wp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
-WP = simple_key_sequence([send_string(variables.wp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
+WP = simple_key_sequence([send_string(variables.lp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 # Workspaces switch
 W1 = simple_key_sequence([KC.LCMD(KC.HOME)])
 W2 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N2))])
@@ -89,7 +89,7 @@ TD_W26 = KC.TD(W2, W6)
 TD_W37 = KC.TD(W3, W7)
 TD_W48 = KC.TD(W4, W8)
 
-TD_OTHER = KC.TD(FULLSCREEN_WINDOW, LANGSW)
+TD_OTHER = KC.TD(LANGSW, FULLSCREEN_WINDOW)
 
 # KEYMAPS
 keyboard.keymap = [
@@ -103,7 +103,7 @@ keyboard.keymap = [
 encoders.map = [
     (
         (FF10,          RW10,           MINI_PLAYER),
-        (TD_W_RIGHT,    TD_W_LEFT,      KC.RGB_TOG)
+        (MOVE_SCREEN_RIGHT,    MOVE_SCREEN_LEFT,      KC.RGB_TOG)
     )
 ]
 

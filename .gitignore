@@ -4,3 +4,6 @@
 boot_out.txt
 variables.py
 System Volume Information/
+.vscode/
+BOOTEX.LOG
+FOUND.000/
