@@ -68,18 +68,30 @@ MOVE_SCREEN_RIGHT = simple_key_sequence(
 MOVE_SCREEN_LEFT = simple_key_sequence(
     [KC.LCMD(KC.LSFT(KC.LEFT)), KC.MACRO_SLEEP_MS(50), KC.ESC])
 # Youtube control
-SLOWDOWN = simple_key_sequence([KC.LEFT_ANGLE_BRACKET])
-SPEEDUP = simple_key_sequence([KC.RIGHT_ANGLE_BRACKET])
-PREVIOUS = simple_key_sequence([KC.LSFT(KC.P)])
-NEXT = simple_key_sequence([KC.LSFT(KC.N)])
-PLAY_PAUSE = simple_key_sequence([KC.SPACE])
-MINI_PLAYER = simple_key_sequence([KC.I])
-THEATRE = simple_key_sequence([KC.T])
-FULLSCREEN = simple_key_sequence([KC.F])
-FF10 = simple_key_sequence([KC.L])
-RW10 = simple_key_sequence([KC.J])
-PREPARE_WINDOW = simple_key_sequence([KC.LWIN(KC.LSFT(KC.RIGHT)), KC.MACRO_SLEEP_MS(
-    50), KC.LWIN(KC.UP), KC.MACRO_SLEEP_MS(50), KC.F])
+# Ctrl+Shift+F1 executes youtube window focus script:
+# https://github.com/f5AFfMhv/Random-Scripts/blob/master/HotKey-Deck/youtube_focus.sh
+SLOWDOWN = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.LEFT_ANGLE_BRACKET])
+SPEEDUP = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.RIGHT_ANGLE_BRACKET])
+PREVIOUS = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.LSFT(KC.P)])
+NEXT = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.LSFT(KC.N)])
+PLAY_PAUSE = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.SPACE])
+MINI_PLAYER = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.I])
+THEATRE = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.T])
+FULLSCREEN = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.F])
+FF10 = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.L])
+RW10 = simple_key_sequence(
+    [KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.J])
+PREPARE_WINDOW = simple_key_sequence([KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.LWIN(
+    KC.LSFT(KC.RIGHT)), KC.MACRO_SLEEP_MS(50), KC.LWIN(KC.UP), KC.MACRO_SLEEP_MS(50), KC.F])
 
 # LAYER SWITCHING TAP DANCE
 TD_Y_SPEED = KC.TD(SPEEDUP, SLOWDOWN)
