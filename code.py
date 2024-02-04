@@ -34,7 +34,7 @@ keyboard.debug_enabled = False
 
 # KMK docs: http://kmkfw.io/docs/keycodes/
 # MACROS
-LANGSW = simple_key_sequence([KC.LALT(KC.Z)])
+LANGSW = simple_key_sequence([KC.LCTRL(KC.LSFT(KC.Z))])
 FULLSCREEN_WINDOW = simple_key_sequence([KC.LWIN(KC.UP)])
 # Personal
 PUP = simple_key_sequence([send_string(variables.pu), KC.MACRO_SLEEP_MS(
