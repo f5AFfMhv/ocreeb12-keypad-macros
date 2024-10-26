@@ -34,7 +34,8 @@ keyboard.debug_enabled = False
 
 # KMK docs: http://kmkfw.io/docs/keycodes/
 # MACROS
-LANGSW = simple_key_sequence([KC.LCTRL(KC.LSFT(KC.BSLASH))])
+LLANGSW = simple_key_sequence([KC.LCTRL(KC.LSFT(KC.BSLASH))])
+WLANGSW = simple_key_sequence([KC.LSFT(KC.LALT)])
 FULLSCREEN_WINDOW = simple_key_sequence([KC.LWIN(KC.UP)])
 # Personal
 PUP = simple_key_sequence([send_string(variables.pu), KC.MACRO_SLEEP_MS(
@@ -93,8 +94,23 @@ RW10 = simple_key_sequence(
 PREPARE_WINDOW = simple_key_sequence([KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_MS(200), KC.LWIN(
     KC.LSFT(KC.RIGHT)), KC.MACRO_SLEEP_MS(50), KC.LWIN(KC.UP), KC.MACRO_SLEEP_MS(50), KC.F])
 
+# Window controls
+CLOSE_WINDOW = simple_key_sequence([KC.LCTRL(KC.Q)])
+ZOOM_IN = simple_key_sequence([KC.LCTRL(KC.PLUS)])
+ZOOM_OUT = simple_key_sequence([KC.LCTRL(KC.MINUS)])
+
+# Browser controls
+NEW_TAB = simple_key_sequence([KC.LCTRL(KC.T)])
+CLOSE_TAB = simple_key_sequence([KC.LCTRL(KC.W)])
+REOPEN_TAB = simple_key_sequence([KC.LCTRL(KC.Y)])
+
+# Text editing
+COPY = simple_key_sequence([KC.LCTRL(KC.C)])
+PASTE = simple_key_sequence([KC.LCTRL(KC.V)])
+UNDO = simple_key_sequence([KC.LCTRL(KC.Z)])
+
 # LAYER SWITCHING TAP DANCE
-TD_Y_SPEED = KC.TD(SPEEDUP, SLOWDOWN)
+TD_Y_SPEED = KC.TD(SPEEDUP, SLOWDOWN, NEXT)
 TD_Y_VID = KC.TD(NEXT, PREVIOUS)
 TD_Y_SCREEN = KC.TD(FULLSCREEN, THEATRE, MINI_PLAYER)
 TD_Y_PLAY = KC.TD(PLAY_PAUSE, PREPARE_WINDOW)
@@ -111,13 +127,16 @@ TD_W26 = KC.TD(W2, W6)
 TD_W37 = KC.TD(W3, W7)
 TD_W48 = KC.TD(W4, W8)
 
-TD_OTHER = KC.TD(LANGSW, FULLSCREEN_WINDOW)
+TD_OTHER = KC.TD(LLANGSW, WLANGSW)
+
+TD_TAB = KC.TD(NEW_TAB, CLOSE_TAB, REOPEN_TAB)
+TD_CPU = KC.TD(COPY, PASTE, UNDO)
 
 # KEYMAPS
 keyboard.keymap = [
     [
         TD_W15,         TD_W26,         TD_W37,         TD_W48,
-        TD_Y_PLAY,      TD_Y_SCREEN,    TD_Y_SPEED,     TD_Y_VID,
+        TD_TAB,         TD_CPU,         CLOSE_WINDOW,   TD_Y_SPEED,
         TD_P_P,         TD_OTHER,       TD_W_C,         TD_W_P,
     ]
 ]
@@ -125,7 +144,7 @@ keyboard.keymap = [
 encoders.map = [
     (
         (FF10,          RW10,           MINI_PLAYER),
-        (MOVE_SCREEN_RIGHT,    MOVE_SCREEN_LEFT,      KC.RGB_TOG)
+        (ZOOM_IN,       ZOOM_OUT,       KC.RGB_TOG)
     )
 ]
 
