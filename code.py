@@ -42,7 +42,7 @@ PUP = simple_key_sequence([send_string(variables.pu), KC.MACRO_SLEEP_MS(
     50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.pp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 PP = simple_key_sequence(
     [send_string(variables.pp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
-WRS = simple_key_sequence([send_string(variables.wrs), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string(
+WRS = simple_key_sequence([send_string(variables.wrs), KC.ENTER, KC.MACRO_SLEEP_MS(1000), send_string(
     variables.lp), KC.ENTER, KC.MACRO_SLEEP_MS(500), send_string('sudo -i'), KC.ENTER])
 WUP = simple_key_sequence([send_string(variables.wu), KC.MACRO_SLEEP_MS(
     50), KC.TAB, KC.MACRO_SLEEP_MS(50), send_string(variables.lp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
