@@ -8,7 +8,7 @@ from kmk.handlers.sequences import send_string, simple_key_sequence
 from kmk.modules.layers import Layers
 from kmk.modules.encoder import EncoderHandler
 from kmk.modules.tapdance import TapDance
-from kmk.extensions.RGB import RGB
+from kmk.extensions.RGB import RGB, AnimationModes
 
 # KEYBOARD SETUP
 layers = Layers()
@@ -28,7 +28,7 @@ encoders.pins = ((board.A2, board.A1, board.A0, False),
                  (board.SCK, board.MISO, board.MOSI, False),)
 
 # EXTENSIONS
-rgb_ext = RGB(pixel_pin=board.D10, num_pixels=4, hue_default=180)
+rgb_ext = RGB(pixel_pin=board.D10, num_pixels=4, animation_mode=AnimationModes.SWIRL)
 keyboard.extensions.append(rgb_ext)
 keyboard.debug_enabled = False
 
@@ -51,14 +51,14 @@ WAUP = simple_key_sequence([send_string(variables.wau), KC.MACRO_SLEEP_MS(
 WP = simple_key_sequence(
     [send_string(variables.lp), KC.MACRO_SLEEP_MS(50), KC.ENTER])
 # Workspaces switch
-W1 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.HOME))])
-W2 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N2))])
-W3 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N3))])
-W4 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N4))])
-W5 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N5))])
-W6 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N6))])
-W7 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N7))])
-W8 = simple_key_sequence([KC.LCMD(KC.LSFT(KC.N8))])
+W1 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N1))])
+W2 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N2))])
+W3 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N3))])
+W4 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N4))])
+W5 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N5))])
+W6 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N6))])
+W7 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N7))])
+W8 = simple_key_sequence([KC.LCMD(KC.LALT(KC.N8))])
 # Change current window position
 MOVE_RIGHT = simple_key_sequence(
     [KC.LCMD(KC.RIGHT), KC.MACRO_SLEEP_MS(50), KC.ESC])
@@ -96,7 +96,7 @@ PREPARE_WINDOW = simple_key_sequence([KC.LCTRL(KC.LSFT(KC.F1)), KC.MACRO_SLEEP_M
 
 # Window controls
 CLOSE_WINDOW = simple_key_sequence([KC.LCTRL(KC.Q)])
-ZOOM_IN = simple_key_sequence([KC.LCTRL(KC.PLUS)])
+ZOOM_IN = simple_key_sequence([KC.LCTRL(KC.EQUAL)])
 ZOOM_OUT = simple_key_sequence([KC.LCTRL(KC.MINUS)])
 
 # Browser controls
@@ -143,7 +143,7 @@ keyboard.keymap = [
 
 encoders.map = [
     (
-        (FF10,          RW10,           MINI_PLAYER),
+        (FF10,          RW10,           KC.RGB_M_BR),
         (ZOOM_IN,       ZOOM_OUT,       KC.RGB_TOG)
     )
 ]
