@@ -16,6 +16,7 @@ col.direction = Direction.OUTPUT
 row.pull = Pull.DOWN
 col.value = True
 
+# Mount CIRCUITPY drive only when top right button is pressed upon boot
 if not row.value:
     storage.disable_usb_drive()
     usb_cdc.disable()
