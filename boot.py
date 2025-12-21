@@ -5,7 +5,7 @@ import usb_cdc
 
 from digitalio import DigitalInOut, Direction, Pull
 
-supervisor.set_next_stack_limit(4096 + 4096)
+# supervisor.set_next_stack_limit(4096 + 4096)
 
 row = DigitalInOut(board.D7)
 col = DigitalInOut(board.D6)
