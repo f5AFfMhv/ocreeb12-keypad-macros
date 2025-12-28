@@ -137,14 +137,14 @@ keyboard.keymap = [
     [
         TD_W15,         TD_W26,         TD_W37,         TD_W48,
         TD_TAB,         TD_CPU,         CLOSE_WINDOW,   TD_Y_SPEED,
-        TD_P_P,         TD_OTHER,       TD_W_C,         TD_W_P,
+        TD_P_P,         WLANGSW,       TD_W_C,         TD_W_P,
     ]
 ]
 
 encoders.map = [
     (
-        (FF10,          RW10,           KC.RGB_M_BR),
-        (ZOOM_IN,       ZOOM_OUT,       KC.RGB_TOG)
+        (ZOOM_IN,                 ZOOM_OUT,              KC.RGB_M_BR),
+        (KC.AUDIO_VOL_UP,         KC.AUDIO_VOL_DOWN,     KC.RGB_TOG)
     )
 ]
 
